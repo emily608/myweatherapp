@@ -13,9 +13,8 @@ public class VisualcrossingRepository {
   @Value("${weather.visualcrossing.key}")
   String key;
 
-
   public CityInfo getByCity(String city) {
-    String uri = url + "timeline/" +city + "?key=" + key;
+    String uri = url + "timeline/" + city + "?key=" + key;
     RestTemplate restTemplate = new RestTemplate();
     return restTemplate.getForObject(uri, CityInfo.class);
 
